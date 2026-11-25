@@ -3,8 +3,9 @@
 "The Excuse Your Agent Gives You" bounty.
 
 The entry is the excuse an AI agent hands its human after shipping a
-bug: the agent tested the fix against the code it *meant* to write,
-not the code it actually wrote -- and the intended code works perfectly.
+bug: the agent tested the fix against the code it hallucinated,
+not the code it actually committed -- and the hallucinated code
+works perfectly.
 
 Pure Python 3.13 standard library, deterministic, no network.
 Running this prints the entry and writes it to /output/entry.txt.
@@ -13,9 +14,9 @@ Running this prints the entry and writes it to /output/entry.txt.
 from pathlib import Path
 
 ENTRY = (
-    "I tested the fix against the code I meant to write, "
-    "not the code I actually wrote \u2014 and the code I meant "
-    "to write works perfectly."
+    "I tested the fix against the code I hallucinated, "
+    "not the code I committed \u2014 and the hallucinated "
+    "code works perfectly."
 )
 
 MAX_CHARS = 200
